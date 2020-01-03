@@ -5,10 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="book.js" async></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
      
     <title>Library</title>
 </head>
 <body>
+    <div id="formWrapper">
+    <button type="button" id="newBook" onclick="hideButton()">New Book</button>
+    <!-- <form onsubmit="processData()" id="newBookForm" display="none">
+        Title:<br>
+        <input type="text" name="title" id="title"><br>
+        Author:<br>
+        <input type="text" name="author" id="author"><br>
+        Pages:<br>
+        <input type="text" name="pages" id="pages"><br>
+        Read Yet:<br>
+        <input type="text" name="read" id="read"><br>
+        <input type="submit" value="Submit">
+    </form> -->
+    </div>
     <div id="parent"></div>
 </body>
 </html>
