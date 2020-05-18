@@ -1,28 +1,29 @@
-function Book(title, author, pageCount, hasRead) {
-    this.title = title;
-    this.author = author;
-    this.pageCount = pageCount;
-    this.hasRead = hasRead;
+class Book {
+    constructor(title, author, pageCount, hasRead) {
+        this.title = title;
+        this.author = author;
+        this.pageCount = pageCount;
+        this.hasRead = hasRead;
+    }
+
+    info() {
+        if (this.hasRead.toLowerCase() == "false") {
+            return `${this.title} by ${this.author}, ${this.pageCount} pages, not read yet.`;
+        } else if (this.hasRead.toLowerCase() == "true") {
+            return `${this.title} by ${this.author}, ${this.pageCount} pages, has been read.`;
+        } else {
+            return `${this.title} by ${this.author}, ${this.pageCount} pages, not sure if read yet!`;
+        }
+    }
+
+    changeReadStatus() {
+        if (this.hasRead.toLowerCase() == 'true') {
+            this.hasRead = 'false';
+        } else if (this.hasRead.toLowerCase() == 'false') {
+            this.hasRead = 'true';
+        }
+    }
 }
-
-Book.prototype.info = function() {
-    if (this.hasRead.toLowerCase() == "false") {
-        return `${this.title} by ${this.author}, ${this.pageCount} pages, not read yet.`;
-    } else if (this.hasRead.toLowerCase() == "true") {
-        return `${this.title} by ${this.author}, ${this.pageCount} pages, has been read.`;
-    } else {
-        return `${this.title} by ${this.author}, ${this.pageCount} pages, not sure if read yet!`;
-    }
-};
-
-Book.prototype.changeReadStatus = function() {
-    if (this.hasRead.toLowerCase() == 'true') {
-        this.hasRead = 'false';
-    } else if (this.hasRead.toLowerCase() == 'false') {
-        this.hasRead = 'true';
-    }
-};
-
 
 function addBookToLbrary() {
     let input = prompt("Please enter a book with the title, author, page count, and if you have read it (comma separated):");
